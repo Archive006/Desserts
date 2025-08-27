@@ -3,254 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desserts And Treats By Kesh 🍰</title>
+  <title>Desserts And Treats By Kesh</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #000;
-      color: #FFD700;
-      text-align: center;
-    }
-
-    h1, h2, h3, p, li {
-      background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
-      background-size: 200% auto;
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      animation: shine 4s linear infinite;
-    }
-
-    @keyframes shine {
-      to { background-position: 200% center; }
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: black;
     }
 
     header {
-      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+      background: linear-gradient(to right, pink, purple);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header img {
+      height: 120px; /* Larger logo */
+      margin-right: 20px;
     }
 
     header h1 {
       font-size: 2.5rem;
-      margin: 0;
-    }
-
-    nav {
-      margin-top: 15px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #FFD700;
-      margin: 0 12px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #FFA500;
+      color: black;
+      text-shadow: 2px 2px 6px rgba(255,105,180,0.5), 
+                   -2px -2px 6px rgba(138,43,226,0.5);
     }
 
     section {
-      padding: 50px 20px;
+      padding: 40px;
+      background: rgba(255,255,255,0.85);
+      margin: 30px auto;
+      max-width: 1100px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: black;
+      text-shadow: 1px 1px 4px pink, -1px -1px 4px purple;
     }
 
     ul {
       list-style: none;
       padding: 0;
-      margin: 0;
     }
 
-    li {
-      margin: 6px 0;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid #FFD700;
+    ul li {
+      padding: 6px 0;
     }
 
     footer {
-      background: #111;
+      text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
+      background: linear-gradient(to right, pink, purple);
+      color: black;
+      font-weight: bold;
     }
 
-    /* Modal */
     .modal {
       display: none;
       position: fixed;
       z-index: 1;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.9);
-      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.6);
     }
 
     .modal-content {
-      background: #222;
-      margin: auto;
+      background: white;
+      margin: 15% auto;
       padding: 20px;
-      border: 1px solid #FFD700;
-      width: 80%;
-      color: #FFD700;
+      border-radius: 10px;
+      max-width: 600px;
     }
 
     .close {
-      color: #FFD700;
       float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover {
-      color: #FFA500;
+      font-size: 20px;
       cursor: pointer;
-    }
-
-    button {
-      background: black;
-      color: #FFD700;
-      border: 1px solid #FFD700;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 8px;
-    }
-
-    button:hover {
-      background: #FFD700;
-      color: black;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Desserts And Treats By Kesh 🍰</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#flavors">Flavors</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <img src="logo.png" alt="Logo">
+    <h1>Desserts And Treats By Kesh</h1>
   </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>I take pride in creating decadent desserts that bring sweetness to your special events. 
-    As a small business owner, I not only pour passion into every order but also support fellow 
-    local businesses and encourage other women to step into entrepreneurship. Each dessert I 
-    create is a reflection of my love for baking and my commitment to making your occasion unforgettable.</p>
+  <section>
+    <h2>Contact Information</h2>
+    <p><strong>WhatsApp:</strong> +27605261753</p>
+    <p><strong>Email:</strong> None</p>
+    <p><strong>Address:</strong> Online</p>
   </section>
 
-  <section id="menu">
-    <h2>Menu & Pricing</h2>
+  <section>
+    <h2>Menu</h2>
     <ul>
-      <li>Cheesecakes - R17 Each</li>
-      <li>Decadent Cheesecakes - R18.50 Each</li>
-      <li>Caramel Treats - R16 Each</li>
-      <li>Mousse - R15 Each</li>
-      <li>Decadent Mousse - R28 Each</li>
-      <li>Gulam Jamun Cheesecake - R25 Each</li>
-      <li>Coconut Ice Cheesecake - R20 Each</li>
-      <li>Milk Tart - R15 Each</li>
-      <li>Trifle (Vanilla, Chocolate, Red Velvet) - R16.50 Each</li>
-      <li>Malva Pudding - R15 Each</li>
-      <li>Chocolate Brownies - R170 Dozen</li>
-      <li>Millionaires Shortbread - R150 Dozen</li>
-      <li>Scones - R120 Dozen</li>
-      <li>Lamingtons (Pink, Brown) - R95 Dozen</li>
-      <li>Mini Cupcakes - R80 Dozen</li>
-      <li>Vanilla Squares - R100 Dozen</li>
-      <li>Chocolate Squares - R100 Dozen</li>
+      <li>Cheesecakes</li>
+      <li>Decadent Cheesecakes</li>
+      <li>Caramel Treats</li>
+      <li>Mousse</li>
+      <li>Decadent Mousse</li>
+    </ul>
+    <h3>Other</h3>
+    <ul>
+      <li>Gulam Jamun Cheesecake</li>
+      <li>Coconut Ice Cheesecake</li>
+      <li>Milk Tart</li>
+      <li>Trifle (Vanilla, Chocolate, Red Velvet)</li>
+      <li>Malva Pudding</li>
+      <li>Chocolate Brownies</li>
+      <li>Millionaires Shortbread</li>
+      <li>Scones</li>
+      <li>Lamingtons</li>
+      <li>Mini Cupcakes</li>
+      <li>Vanilla Squares</li>
+      <li>Chocolate Squares</li>
     </ul>
   </section>
 
-  <section id="flavors">
+  <section>
     <h2>Flavors</h2>
-    <h3>Cheesecakes</h3>
-    <p>Strawberry, Granadilla, Cinnabon, Tiramisu, Lemon, Chocolate, Cookies & Cream, Blueberry, Lemon & Lime, Pineapple & Coconut</p>
-    <h3>Decadent Cheesecakes</h3>
-    <p>Rainbow, Vanilla Sponge, Red Velvet, Chocolate, Black Forest</p>
-    <h3>Caramel Treats</h3>
-    <p>Peppermint Tart, Caramel Crunchie, Oreo Caramel, Caramel Pecan, Caramel PS, Caramel Chocolate</p>
-    <h3>Mousse</h3>
-    <p>Cadbury, Milky Bar, Mint Aero, Peppermint, Turkish Delight, Kit Kat, Crunchie, Oreo</p>
-    <h3>Decadent Mousse</h3>
-    <p>Ferrero, Lindt, Kinder</p>
-    <h3>Biscuits</h3>
-    <p>Pecan, Shortbread, Coconut, Melting Moment, Romany Creams, Chocolate Chip</p>
-    <h3>Dessert Boxes</h3>
-    <p>Mixed Box (R360), Cheesecake Box (R330), Mousse Box (R300), Biscuit Barrels (R220 - R300)</p>
+    <p><strong>Cheesecakes:</strong> Strawberry, Granadilla, Cinnabon, Tiramisu, Lemon, Chocolate, Cookies and Cream, Blueberry, Lemon and Lime, Pineapple and Coconut</p>
+    <p><strong>Decadent Cheesecakes:</strong> Rainbow, Vanilla Sponge, Red Velvet, Chocolate, Black Forest</p>
+    <p><strong>Caramel Treats:</strong> Peppermint Tart, Caramel Crunchie, Oreo Caramel, Caramel Pecan, Caramel PS, Caramel Chocolate</p>
+    <p><strong>Mousse:</strong> Cadbury, Milky Bar, Mint Aero, Peppermint, Turkish Delight, Kit Kat, Crunchie, Oreo</p>
+    <p><strong>Decadent Mousse:</strong> Ferrero, Lindt, Kinder</p>
+    <p><strong>Other Treats:</strong> Milk Tart, Gulum Jamun, Coconut Ice, Trifle, Malva Pudding, Brownies, Millionaires Shortbread, Scones, Lamingtons, Mini Cupcakes, Vanilla Squares, Chocolate Squares</p>
+    <p><strong>Biscuits:</strong> Pecan, Shortbread, Coconut, Melting Moment, Romany Creams, Chocolate Chip</p>
   </section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <!-- Replace with your own OneDrive/Google Drive image links -->
-      <img src="https://via.placeholder.com/300x200?text=Dessert+1" alt="Dessert 1">
-      <img src="https://via.placeholder.com/300x200?text=Dessert+2" alt="Dessert 2">
-      <img src="https://via.placeholder.com/300x200?text=Dessert+3" alt="Dessert 3">
-    </div>
+  <section>
+    <h2>Dessert Boxes</h2>
+    <p><strong>Mixed Box:</strong> Peppermint, Oreo Caramel, Cadbury Mousse, Granadilla Cheesecake</p>
+    <p><strong>Cheesecake Box:</strong> Strawberry/Lemon, Cookies and Cream, Granadilla, Tiramisu/Vanilla Sponge</p>
+    <p><strong>Mousse Box:</strong> Kit Kat, Milky Bar, Cadbury, Mint Oreo/Turkish Delight</p>
+    <p><strong>Biscuits Barrel:</strong> Pecan, Shortbread, Coconut, Melting Moment, Romany Creams, Chocolate Chip</p>
   </section>
 
-  <section id="testimonials">
+  <section>
+    <h2>About</h2>
+    <p>I take pride in creating decadent desserts that bring sweetness to your special events. As a small business owner, I not only pour passion into every order but also support fellow local businesses and encourage other women to step into entrepreneurship. Each dessert I create is a reflection of my love for baking and my commitment to making your occasion unforgettable.</p>
+  </section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <h2>Our Gallery</h2>
+  <div class="gallery-container">
+    <img src="gallery1.jpg" alt="Dessert 1">
+    <img src="gallery2.jpg" alt="Dessert 2">
+    <img src="gallery3.jpg" alt="Dessert 3">
+  </div>
+</section>
+
+  <section>
     <h2>Testimonials</h2>
-    <p><strong>Roshnee:</strong> Thank you Desserts and Unique bouquets for choosing me as the winner. The brownies are absolutely delicious 😋. Keshnie Govender I pray that the abundant favor and grace of the Lord Jesus always rest upon your business 🙏</p>
-    <p><strong>Samantha:</strong> I loved it, best bday cake ever... and delicious as always ❤</p>
+    <blockquote>
+      Roshnee: Thank you Desserts and Unique bouquets for choosing me as the winner. The brownies are absolutely delicious😋. Keshnie Govender I pray that the abundant favor and grace of the Lord Jesus always rest upon ur business and ur life always🙏God bless you for ur kindness ❤❤❤
+    </blockquote>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>WhatsApp: <a href="https://wa.me/27605261753" target="_blank">+27 60 526 1753</a></p>
-    <p>Email: <em>No email address</em></p>
-    <p>Address: Online</p>
+  <section>
+    <h2>Social Media</h2>
     <p><a href="https://www.facebook.com/share/1Aee1aunWg/" target="_blank">Facebook</a></p>
-    <button id="legalBtn">Legal Info</button>
   </section>
 
   <footer>
-    <p>© 2025 Desserts And Treats By Kesh 🍰 | All Rights Reserved</p>
+    <p>&copy; 2025 Desserts And Treats By Kesh. All Rights Reserved.</p>
+    <p><a href="#" id="legalLink">Legal Info</a></p>
   </footer>
 
-  <!-- Modal -->
+  <!-- Legal Info Modal -->
   <div id="legalModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Legal Info</h2>
-      <p>This website and its contents are for informational purposes only. Prices and availability subject to change.</p>
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Legal Information</h2>
+      <p>This website is for showcasing Desserts And Treats By Kesh. All rights reserved. Prices and availability are subject to change.</p>
     </div>
   </div>
 
   <script>
-    var modal = document.getElementById("legalModal");
-    var btn = document.getElementById("legalBtn");
-    var span = document.getElementsByClassName("close")[0];
+    const modal = document.getElementById("legalModal");
+    const btn = document.getElementById("legalLink");
+    const span = document.getElementById("closeModal");
 
-    btn.onclick = function() {
+    btn.onclick = function(e) {
+      e.preventDefault();
       modal.style.display = "block";
     }
-
     span.onclick = function() {
       modal.style.display = "none";
     }
-
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
     }
   </script>
-
 </body>
 </html>
