@@ -114,11 +114,7 @@
       max-width: 500px;
       box-shadow: 0 8px 25px rgba(255, 182, 193, 0.5);
       border: 5px solid gold;
-      background-image: url('https://i.imgur.com/1a2mW0T.png'), 
-                        url('https://i.imgur.com/Z8bO1sF.png');
-      background-repeat: no-repeat, no-repeat;
-      background-position: top left, bottom right;
-      background-size: 80px, 80px;
+      overflow: hidden;
     }
 
     #christmasPopup .close-popup {
@@ -142,7 +138,28 @@
       line-height: 1.6;
     }
 
-    /* Decorative Snowflakes Animation */
+    /* CSS Decorations for Popup */
+    #christmasPopup::before,
+    #christmasPopup::after {
+      content: "❄️❄️❄️❄️";
+      position: absolute;
+      font-size: 30px;
+      color: #fff;
+      opacity: 0.7;
+    }
+
+    #christmasPopup::before {
+      top: 10px;
+      left: 10px;
+      transform: rotate(-20deg);
+    }
+
+    #christmasPopup::after {
+      bottom: 10px;
+      right: 10px;
+      transform: rotate(15deg);
+    }
+
     @keyframes fall {
       0% { transform: translateY(-10px) rotate(0deg); opacity: 0.8; }
       100% { transform: translateY(40px) rotate(360deg); opacity: 0; }
@@ -281,65 +298,4 @@
   <section>
     <h2>Testimonials</h2>
     <blockquote>
-      Adelle Bernadette: KESH, you are amazing! Best desserts ever! Thank you so much for being a wonderful person with a real heart of gold. Shows in your work 💯 your desserts were so well presented and absolutely divine. My guests and I thoroughly enjoyed them all. I even managed to hide a few which made the perfect breakfast treats for myself the next morning, lol. 😜 God bless you girl 💖
-    </blockquote>
-    <blockquote>
-      Lucille: Ordered desserts over the weekend for a small function. Not only did they look gorgeous but they tasted divine. Her professionalism and attention to detail has definitely got me wanting to order again!
-    </blockquote>
-  </section>
-
-  <section>
-    <h2>Social Media</h2>
-    <p><a href="https://www.facebook.com/share/1Aee1aunWg/" target="_blank">Facebook</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Desserts And Treats By Kesh. All Rights Reserved.</p>
-    <p><a href="#" id="legalLink">Legal Info</a></p>
-  </footer>
-
-  <!-- Legal Info Modal -->
-  <div id="legalModal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2>Legal Information</h2>
-      <p>This website is for showcasing Desserts And Treats By Kesh. All rights reserved. Prices and availability are subject to change.</p>
-    </div>
-  </div>
-
-  <script>
-    // Legal Modal
-    const modal = document.getElementById("legalModal");
-    const btn = document.getElementById("legalLink");
-    const span = document.getElementById("closeModal");
-
-    btn.onclick = function(e) {
-      e.preventDefault();
-      modal.style.display = "block";
-    };
-    span.onclick = function() {
-      modal.style.display = "none";
-    };
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-
-    // Christmas Popup
-    window.onload = function() {
-      const popup = document.getElementById("christmasPopup");
-      const closeBtn = document.getElementById("closeChristmasPopup");
-      popup.style.display = "block";
-      closeBtn.onclick = function() {
-        popup.style.display = "none";
-      };
-      window.onclick = function(event) {
-        if (event.target == popup) {
-          popup.style.display = "none";
-        }
-      };
-    };
-  </script>
-</body>
-</html>
+      Adelle Bernadette: KESH, you are amazing! Best desserts ever! Thank you so much for being a wonderful person with a real heart of gold. Shows in your work 💯 your desserts
