@@ -35,7 +35,7 @@
 
     section {
       padding: 40px;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.9);
       margin: 30px auto;
       max-width: 1100px;
       border-radius: 15px;
@@ -64,7 +64,6 @@
       font-weight: bold;
     }
 
-    /* Modal Base */
     .modal {
       display: none;
       position: fixed;
@@ -91,7 +90,7 @@
       cursor: pointer;
     }
 
-    /* 🎄 Christmas Popup Styling */
+    /* Christmas Popup */
     #christmasPopup {
       display: none;
       position: fixed;
@@ -114,7 +113,6 @@
       max-width: 500px;
       box-shadow: 0 8px 25px rgba(255, 182, 193, 0.5);
       border: 5px solid gold;
-      overflow: hidden;
     }
 
     #christmasPopup .close-popup {
@@ -138,28 +136,7 @@
       line-height: 1.6;
     }
 
-    /* CSS Decorations for Popup */
-    #christmasPopup::before,
-    #christmasPopup::after {
-      content: "❄️❄️❄️❄️";
-      position: absolute;
-      font-size: 30px;
-      color: #fff;
-      opacity: 0.7;
-    }
-
-    #christmasPopup::before {
-      top: 10px;
-      left: 10px;
-      transform: rotate(-20deg);
-    }
-
-    #christmasPopup::after {
-      bottom: 10px;
-      right: 10px;
-      transform: rotate(15deg);
-    }
-
+    /* Snowflakes Animation */
     @keyframes fall {
       0% { transform: translateY(-10px) rotate(0deg); opacity: 0.8; }
       100% { transform: translateY(40px) rotate(360deg); opacity: 0; }
@@ -187,7 +164,6 @@
       }
     }
 
-    /* Gallery */
     .gallery {
       padding: 40px 20px;
       text-align: center;
@@ -211,13 +187,13 @@
   </style>
 </head>
 <body>
-  <!-- 🎄 Christmas Popup -->
+  <!-- Christmas Popup -->
   <div id="christmasPopup">
     <div class="popup-content">
       <span class="close-popup" id="closeChristmasPopup">&times;</span>
       <h2>🎄 Merry Christmas from Desserts And Treats By Kesh 🎅</h2>
-      <p>✨ May your holidays be filled with sweetness, joy, and blessings ✨</p>
-      <p><strong>🎁 Exciting News:</strong> Our <b>Christmas Menu</b> will be released soon — stay tuned!</p>
+      <p>✨ Wishing our customers a joyous and sweet festive season ✨</p>
+      <p><strong>🎁 Special Update:</strong> Our <b>Christmas Menu</b> will be released soon!</p>
       <div class="snowflake" style="left:20%; animation-delay:0s;">❄️</div>
       <div class="snowflake" style="left:50%; animation-delay:1s;">❄️</div>
       <div class="snowflake" style="left:70%; animation-delay:2s;">❄️</div>
@@ -282,20 +258,72 @@
 
   <section>
     <h2>About</h2>
-    <p>I take pride in creating decadent desserts that bring sweetness to your special events. As a small business owner, I not only pour passion into every order but also support fellow local businesses and encourage other women to step into entrepreneurship. Each dessert I create is a reflection of my love for baking and my commitment to making your occasion unforgettable.</p>
+    <p>I take pride in creating decadent desserts that bring sweetness to your special events. As a small business owner, I pour passion into every order and support fellow local businesses. Each dessert is a reflection of my love for baking and commitment to making your occasion unforgettable.</p>
   </section>
 
-  <!-- Gallery Section -->
   <section class="gallery">
     <h2>Our Gallery</h2>
     <div class="gallery-container">
-      <img src="gallery1.jpg" alt="Dessert 1">
-      <img src="gallery2.jpg" alt="Dessert 2">
-      <img src="gallery3.jpg" alt="Dessert 3">
+      <img src="placeholder1.jpg" alt="Dessert 1">
+      <img src="placeholder2.jpg" alt="Dessert 2">
+      <img src="placeholder3.jpg" alt="Dessert 3">
     </div>
   </section>
 
   <section>
     <h2>Testimonials</h2>
     <blockquote>
-      Adelle Bernadette: KESH, you are amazing! Best desserts ever! Thank you so much for being a wonderful person with a real heart of gold. Shows in your work 💯 your desserts
+      Adelle Bernadette: KESH, you are amazing! Best desserts ever! Thank you for being wonderful. My guests and I thoroughly enjoyed them all. God bless you 💖
+    </blockquote>
+    <blockquote>
+      Lucille: Ordered desserts over the weekend. Not only did they look gorgeous but they tasted divine. Professionalism and attention to detail is amazing!
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Social Media</h2>
+    <p><a href="https://www.facebook.com/share/1Aee1aunWg/" target="_blank">Facebook</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Desserts And Treats By Kesh. All Rights Reserved.</p>
+    <p><a href="#" id="legalLink">Legal Info</a></p>
+  </footer>
+
+  <!-- Legal Info Modal -->
+  <div id="legalModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Legal Information</h2>
+      <p>This website is for showcasing Desserts And Treats By Kesh. All rights reserved. Prices and availability are subject to change.</p>
+    </div>
+  </div>
+
+  <script>
+    // Legal modal
+    const modal = document.getElementById("legalModal");
+    const btn = document.getElementById("legalLink");
+    const span = document.getElementById("closeModal");
+
+    btn.onclick = function(e) {
+      e.preventDefault();
+      modal.style.display = "block";
+    };
+    span.onclick = function() {
+      modal.style.display = "none";
+    };
+    window.onclick = function(event) {
+      if (event.target == modal) { modal.style.display = "none"; }
+    }
+
+    // Christmas Popup
+    window.onload = function() {
+      const popup = document.getElementById("christmasPopup");
+      const closeBtn = document.getElementById("closeChristmasPopup");
+      popup.style.display = "block";
+      closeBtn.onclick = function() { popup.style.display = "none"; }
+      window.onclick = function(event) { if (event.target == popup) { popup.style.display = "none"; } }
+    }
+  </script>
+</body>
+</html>
