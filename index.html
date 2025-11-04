@@ -64,6 +64,7 @@
       font-weight: bold;
     }
 
+    /* Modal Base */
     .modal {
       display: none;
       position: fixed;
@@ -90,7 +91,7 @@
       cursor: pointer;
     }
 
-    /* Christmas Popup */
+    /* 🎄 Christmas Popup Styling */
     #christmasPopup {
       display: none;
       position: fixed;
@@ -104,33 +105,54 @@
 
     #christmasPopup .popup-content {
       position: relative;
-      background: linear-gradient(to bottom right, pink, purple);
-      color: white;
+      background: linear-gradient(to bottom right, #ffccd5, #e6b0ff);
+      color: #4b004b;
       text-align: center;
-      margin: 15% auto;
-      padding: 30px;
-      border-radius: 15px;
+      margin: 10% auto;
+      padding: 40px 30px;
+      border-radius: 20px;
       max-width: 500px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 25px rgba(255, 182, 193, 0.5);
+      border: 5px solid gold;
+      background-image: url('https://i.imgur.com/1a2mW0T.png'), 
+                        url('https://i.imgur.com/Z8bO1sF.png');
+      background-repeat: no-repeat, no-repeat;
+      background-position: top left, bottom right;
+      background-size: 80px, 80px;
     }
 
     #christmasPopup .close-popup {
       position: absolute;
       right: 15px;
       top: 10px;
-      font-size: 22px;
-      color: white;
+      font-size: 24px;
+      color: #4b004b;
       cursor: pointer;
+      font-weight: bold;
     }
 
     #christmasPopup h2 {
       font-size: 2rem;
       margin-bottom: 15px;
-      text-shadow: 2px 2px 8px rgba(255,255,255,0.3);
+      text-shadow: 2px 2px 8px rgba(255,255,255,0.6);
     }
 
     #christmasPopup p {
       font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* Decorative Snowflakes Animation */
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 0.8; }
+      100% { transform: translateY(40px) rotate(360deg); opacity: 0; }
+    }
+
+    .snowflake {
+      position: absolute;
+      font-size: 20px;
+      color: white;
+      animation: fall 3s linear infinite;
     }
 
     @media (max-width: 600px) {
@@ -172,13 +194,16 @@
   </style>
 </head>
 <body>
-  <!-- Christmas Popup -->
+  <!-- 🎄 Christmas Popup -->
   <div id="christmasPopup">
     <div class="popup-content">
       <span class="close-popup" id="closeChristmasPopup">&times;</span>
       <h2>🎄 Merry Christmas from Desserts And Treats By Kesh 🎅</h2>
-      <p>We wish all our amazing customers a joyous and sweet festive season!</p>
-      <p><strong>🎁 Exciting news:</strong> Our special <b>Christmas Menu</b> will be released soon — stay tuned!</p>
+      <p>✨ May your holidays be filled with sweetness, joy, and blessings ✨</p>
+      <p><strong>🎁 Exciting News:</strong> Our <b>Christmas Menu</b> will be released soon — stay tuned!</p>
+      <div class="snowflake" style="left:20%; animation-delay:0s;">❄️</div>
+      <div class="snowflake" style="left:50%; animation-delay:1s;">❄️</div>
+      <div class="snowflake" style="left:70%; animation-delay:2s;">❄️</div>
     </div>
   </div>
 
@@ -283,7 +308,7 @@
   </div>
 
   <script>
-    // Legal modal
+    // Legal Modal
     const modal = document.getElementById("legalModal");
     const btn = document.getElementById("legalLink");
     const span = document.getElementById("closeModal");
@@ -291,15 +316,15 @@
     btn.onclick = function(e) {
       e.preventDefault();
       modal.style.display = "block";
-    }
+    };
     span.onclick = function() {
       modal.style.display = "none";
-    }
+    };
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
-    }
+    };
 
     // Christmas Popup
     window.onload = function() {
@@ -308,12 +333,12 @@
       popup.style.display = "block";
       closeBtn.onclick = function() {
         popup.style.display = "none";
-      }
+      };
       window.onclick = function(event) {
         if (event.target == popup) {
           popup.style.display = "none";
         }
-      }
+      };
     };
   </script>
 </body>
