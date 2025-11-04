@@ -22,22 +22,22 @@
     }
 
     header img {
-      height: 120px; /* Larger logo */
+      height: 120px;
       margin-right: 20px;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       color: black;
-      text-shadow: 2px 2px 6px rgba(255,105,180,0.5), 
+      text-shadow: 2px 2px 6px rgba(255,105,180,0.5),
                    -2px -2px 6px rgba(138,43,226,0.5);
     }
 
     section {
-      padding: 40px;
-      background: rgba(255,255,255,0.85);
-      margin: 30px auto;
-      max-width: 1100px;
+      padding: 30px;
+      background: rgba(255,255,255,0.88);
+      margin: 20px auto;
+      max-width: 1000px;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
@@ -64,16 +64,17 @@
       font-weight: bold;
     }
 
+    /* Modal (Legal Info & Popup Shared Base) */
     .modal {
       display: none;
       position: fixed;
-      z-index: 1;
+      z-index: 10;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
       background: rgba(0,0,0,0.6);
+      overflow: auto;
     }
 
     .modal-content {
@@ -82,20 +83,75 @@
       padding: 20px;
       border-radius: 10px;
       max-width: 600px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      text-align: center;
     }
 
     .close {
       float: right;
-      font-size: 20px;
+      font-size: 22px;
       cursor: pointer;
+      color: #555;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    /* Gallery Styling */
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header img {
+        margin-bottom: 10px;
+      }
+
+      section {
+        margin: 10px;
+        padding: 20px;
+      }
+
+      .gallery-container img {
+        max-width: 150px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <img src="logo.png" alt="Logo">
     <h1>Desserts And Treats By Kesh</h1>
   </header>
+
+  <!-- 🎄 Christmas Popup -->
+  <div id="christmasModal" class="modal" style="display:block;">
+    <div class="modal-content" style="background:linear-gradient(to bottom right, pink, lavender);">
+      <span class="close" id="closeChristmas">&times;</span>
+      <h2 style="color:purple;">🎄 Merry Christmas from Desserts And Treats By Kesh! 🎄</h2>
+      <p style="font-size:1.1rem; color:black;">We wish you a season filled with sweetness and joy! 🍰</p>
+      <p style="color:darkred;"><strong>Our special Christmas Menu will be released soon!</strong></p>
+    </div>
+  </div>
 
   <section>
     <h2>Contact Information</h2>
@@ -107,69 +163,27 @@
   <section>
     <h2>Menu</h2>
     <ul>
-      <li>Cheesecakes</li>
-      <li>Decadent Cheesecakes</li>
-      <li>Caramel Treats</li>
-      <li>Mousse</li>
-      <li>Decadent Mousse</li>
+      <li>Cheesecakes - R17 Each</li>
+      <li>Decadent Cheesecakes - R18.50</li>
+      <li>Caramel Treats - R16 Each</li>
+      <li>Mousse - R15 Each</li>
+      <li>Decadent Mousse - R28 Each</li>
     </ul>
-    <h3>Other</h3>
-    <ul>
-      <li>Gulam Jamun Cheesecake</li>
-      <li>Coconut Ice Cheesecake</li>
-      <li>Milk Tart</li>
-      <li>Trifle (Vanilla, Chocolate, Red Velvet)</li>
-      <li>Malva Pudding</li>
-      <li>Chocolate Brownies</li>
-      <li>Millionaires Shortbread</li>
-      <li>Scones</li>
-      <li>Lamingtons</li>
-      <li>Mini Cupcakes</li>
-      <li>Vanilla Squares</li>
-      <li>Chocolate Squares</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Flavors</h2>
-    <p><strong>Cheesecakes:</strong> Strawberry, Granadilla, Cinnabon, Tiramisu, Lemon, Chocolate, Cookies and Cream, Blueberry, Lemon and Lime, Pineapple and Coconut</p>
-    <p><strong>Decadent Cheesecakes:</strong> Rainbow, Vanilla Sponge, Red Velvet, Chocolate, Black Forest</p>
-    <p><strong>Caramel Treats:</strong> Peppermint Tart, Caramel Crunchie, Oreo Caramel, Caramel Pecan, Caramel PS, Caramel Chocolate</p>
-    <p><strong>Mousse:</strong> Cadbury, Milky Bar, Mint Aero, Peppermint, Turkish Delight, Kit Kat, Crunchie, Oreo</p>
-    <p><strong>Decadent Mousse:</strong> Ferrero, Lindt, Kinder</p>
-    <p><strong>Other Treats:</strong> Milk Tart, Gulum Jamun, Coconut Ice, Trifle, Malva Pudding, Brownies, Millionaires Shortbread, Scones, Lamingtons, Mini Cupcakes, Vanilla Squares, Chocolate Squares</p>
-    <p><strong>Biscuits:</strong> Pecan, Shortbread, Coconut, Melting Moment, Romany Creams, Chocolate Chip</p>
-  </section>
-
-  <section>
-    <h2>Dessert Boxes</h2>
-    <p><strong>Mixed Box:</strong> Peppermint, Oreo Caramel, Cadbury Mousse, Granadilla Cheesecake</p>
-    <p><strong>Cheesecake Box:</strong> Strawberry/Lemon, Cookies and Cream, Granadilla, Tiramisu/Vanilla Sponge</p>
-    <p><strong>Mousse Box:</strong> Kit Kat, Milky Bar, Cadbury, Mint Oreo/Turkish Delight</p>
   </section>
 
   <section>
     <h2>About</h2>
-    <p>I take pride in creating decadent desserts that bring sweetness to your special events. As a small business owner, I not only pour passion into every order but also support fellow local businesses and encourage other women to step into entrepreneurship. Each dessert I create is a reflection of my love for baking and my commitment to making your occasion unforgettable.</p>
+    <p>I take pride in creating decadent desserts that bring sweetness to your special events. As a small business owner, I pour passion into every order and support other local businesses and women in entrepreneurship.</p>
   </section>
 
-<!-- Gallery Section -->
-<section class="gallery">
-  <h2>Our Gallery</h2>
-  <div class="gallery-container">
-    <img src="gallery1.jpg" alt="Dessert 1">
-    <img src="gallery2.jpg" alt="Dessert 2">
-    <img src="gallery3.jpg" alt="Dessert 3">
-  </div>
-</section>
-
-  <section>
-    <h2>Testimonials</h2>
-    <blockquote>
-      Adelle Bernadette: KESH, you are amazing! Best desserts ever! Thank you so much for being a wonderful person with a real heart of gold. Shows in your work 💯 your desserts were so well presented and absolutely divine. My guests and I thoroughly enjoyed them all. I even managed to hide a few which made the perfect breakfast treats for myself the next morning, lol. 😜 God bless you girl 💖
-    </blockquote>
-        Lucille: Ordered desserts over the weekend for a small function. Not only did they look gorgeous but they tasted divine. Her professionalism and attention to detail has definitely got me wanting to order again!
-    </blockquote>
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>Our Gallery</h2>
+    <div class="gallery-container">
+      <img src="gallery1.jpg" alt="Dessert 1">
+      <img src="gallery2.jpg" alt="Dessert 2">
+      <img src="gallery3.jpg" alt="Dessert 3">
+    </div>
   </section>
 
   <section>
@@ -187,11 +201,24 @@
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
       <h2>Legal Information</h2>
-      <p>This website is for showcasing Desserts And Treats By Kesh. All rights reserved. Prices and availability are subject to change.</p>
+      <p>This website is for showcasing Desserts And Treats By Kesh. Prices and availability are subject to change.</p>
     </div>
   </div>
 
   <script>
+    // Christmas Popup Logic
+    const christmasModal = document.getElementById("christmasModal");
+    const closeChristmas = document.getElementById("closeChristmas");
+    closeChristmas.onclick = () => {
+      christmasModal.style.display = "none";
+    };
+    window.onclick = (event) => {
+      if (event.target == christmasModal) {
+        christmasModal.style.display = "none";
+      }
+    };
+
+    // Legal Info Logic
     const modal = document.getElementById("legalModal");
     const btn = document.getElementById("legalLink");
     const span = document.getElementById("closeModal");
@@ -211,9 +238,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
